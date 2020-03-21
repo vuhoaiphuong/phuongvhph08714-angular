@@ -5,7 +5,6 @@ import { ProductService } from '../product.service';
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-
 })
 export class ProductListComponent implements OnInit {
   selected: Product;
@@ -29,12 +28,12 @@ export class ProductListComponent implements OnInit {
     this.products = this.productService.removeProduct(id);
   }
      showDetail(product){
-   
+    console.log(this.selected);
     this.selected=product;
      }
   //     changeStatus(){
   //  this.product.status = this.product.status;
-  //    }
+    //  }
   
 
   // product : Product ={

@@ -20,11 +20,11 @@
       </div>
     </div>
   </div> -->
-  <div class="row">
+  <!-- <div class="row">
     <!-- <app-product ngClass="col-lg-4 col-md-6 mb-4"></app-product>
       <app-product ngClass="col-lg-4 col-md-6 mb-4"></app-product>
       <app-product ngClass="col-lg-4 col-md-6 mb-4"></app-product> -->
-    <div ngClass="col-lg-4 col-md-6 mb-4" *ngFor="let product of products">
+    <!-- <div ngClass="col-lg-4 col-md-6 mb-4" *ngFor="let product of products">
       <div class="card h-100">
         <a href="#"><img class="card-img-top" [src]="product.img" alt=""></a>
         <div class="card-body">
@@ -33,20 +33,44 @@
           </h4>
           <h5>${{product.price}}</h5>
           <p class="card-text">{{product.desc}}</p>
-         <p class="card-text">{{product.status ? 'In stock': 'Out stock'}}</p>
+          <p class="card-text">{{product.status ? 'In stock': 'Out stock'}}</p>
         </div>
         <div class="card-footer">
             <button class="btn btn-primary" (click)="removeItem(product.id)">Delete</button>&nbsp;
             <button class="btn btn-primary" (click)="showDetail(product)">Chi tiết</button>
             <input type="text" name="" id="" [(ngModel)]="product.name" class="form-control mt-3">
-            
-
         </div>
       </div>
     </div>
   
-  </div>
-  
-  <div *ngIf="selected">
+  </div> -->
+   
+
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Desk</th>
+        <th scope="col">Status</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products" >
+        <th scope="row">{{product.name}}</th>
+        <td>${{product.price}}</td>
+        <td>{{product.desc}}</td>
+        <td>{{product.status ? 'In stock': 'Out stock'}}</td>
+        <td><button class="btn btn-primary"  (click)="removeItem(product.id)">Delete</button></td>
+        <td><button class="btn btn-primary" routerLink="/product/{{product.id}}">Chi tiết</button></td>
+        <td><button class="btn btn-primary" >Sửa</button></td>
+      </tr>
+      
+    </tbody>
+  </table>
+  <!-- <div *ngIf="selected">
     <app-product [data]="selected"></app-product>
-  </div>
+  </div> -->
