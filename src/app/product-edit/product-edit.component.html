@@ -1,0 +1,23 @@
+<p>
+
+</p>
+<h1>Sửa sản phẩm</h1>
+<form class="w-60 mx-auto mt-6" *ngIf="product">
+
+  <div class="form-group">
+    <label for=""> Tên sản phẩm</label>
+    <input type="text" name="name" class="form-control"placeholder="Tên sản phẩm" [(ngModel)]="product.name">
+    <label for=""> Giá sản phẩm</label>
+    <input type="number" name="price" class="form-control"placeholder="Giá" [(ngModel)]="product.price">
+    <label for=""> Mô tả </label>
+    <input type="text" name="desc" class="form-control"placeholder="Mô tả" [(ngModel)]="product.desc">
+    <label for=""> Trạng thái</label>
+    <input type="text" name="status" class="form-control"placeholder="(Còn / Hết)" [(ngModel)]="product.status">
+    <label for=""> Ảnh </label>
+    <input type="text" name="img" class="form-control"placeholder="Ảnh sản phẩm" [(ngModel)]="product.img">
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="updateProduct()">Sửa</button>
+  <!-- <button type="submit" class="btn btn-primary" routerLink = '/product/edit/{{product.id}}'>Sửa</button -->
+  <br>
+  <br><br><br>
+</form>
